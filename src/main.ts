@@ -714,34 +714,76 @@ function drawBeerIcon(
   centerY: number,
   theme: (typeof VENUE_KIND_THEME)[VenueKind],
 ): void {
-  const mugX = centerX - 8;
-  const mugY = centerY - 7;
+  const glassTopY = centerY - 11;
+  const glassBottomY = centerY + 12;
+  const topHalfWidth = 9;
+  const bottomHalfWidth = 6;
+
+  const traceGlass = (): void => {
+    context.beginPath();
+    context.moveTo(centerX - topHalfWidth + 2, glassTopY);
+    context.lineTo(centerX + topHalfWidth - 2, glassTopY);
+    context.quadraticCurveTo(centerX + topHalfWidth, glassTopY, centerX + topHalfWidth, glassTopY + 2.4);
+    context.lineTo(centerX + bottomHalfWidth + 0.6, glassBottomY - 2.2);
+    context.quadraticCurveTo(centerX + bottomHalfWidth, glassBottomY, centerX + bottomHalfWidth - 2, glassBottomY);
+    context.lineTo(centerX - bottomHalfWidth + 2, glassBottomY);
+    context.quadraticCurveTo(centerX - bottomHalfWidth, glassBottomY, centerX - bottomHalfWidth - 0.6, glassBottomY - 2.2);
+    context.lineTo(centerX - topHalfWidth, glassTopY + 2.4);
+    context.quadraticCurveTo(centerX - topHalfWidth, glassTopY, centerX - topHalfWidth + 2, glassTopY);
+    context.closePath();
+  };
+
+  traceGlass();
+  const beerGradient = context.createLinearGradient(0, glassTopY, 0, glassBottomY);
+  beerGradient.addColorStop(0, "#ffd96a");
+  beerGradient.addColorStop(0.62, theme.iconSecondary);
+  beerGradient.addColorStop(1, "#d8831c");
+  context.fillStyle = beerGradient;
+  context.fill();
+
+  context.save();
+  traceGlass();
+  context.clip();
 
   context.fillStyle = theme.iconTertiary;
   context.beginPath();
-  context.arc(centerX - 7.5, centerY - 7.5, 4.4, 0, Math.PI * 2);
-  context.arc(centerX - 1.5, centerY - 8.8, 4.7, 0, Math.PI * 2);
-  context.arc(centerX + 4.5, centerY - 7.3, 4.2, 0, Math.PI * 2);
+  context.moveTo(centerX - topHalfWidth, glassTopY);
+  context.lineTo(centerX + topHalfWidth, glassTopY);
+  context.lineTo(centerX + topHalfWidth, glassTopY + 5.8);
+  context.quadraticCurveTo(centerX + 5, glassTopY + 9.2, centerX + 1.8, glassTopY + 6.3);
+  context.quadraticCurveTo(centerX - 1.4, glassTopY + 3.8, centerX - 4.5, glassTopY + 7.2);
+  context.quadraticCurveTo(centerX - 7, glassTopY + 9.8, centerX - topHalfWidth, glassTopY + 6.2);
+  context.closePath();
   context.fill();
 
-  traceRoundedRect(context, mugX, mugY - 1, 15, 15, 3.5);
-  context.fillStyle = theme.iconSecondary;
-  context.fill();
+  context.strokeStyle = "rgba(255, 255, 255, 0.48)";
+  context.lineCap = "round";
   context.lineWidth = 2;
-  context.strokeStyle = theme.iconPrimary;
-  context.stroke();
-
-  context.strokeStyle = theme.iconPrimary;
-  context.lineWidth = 2.5;
   context.beginPath();
-  context.moveTo(centerX + 7, centerY - 4.5);
-  context.quadraticCurveTo(centerX + 12.5, centerY - 4.5, centerX + 12.5, centerY + 0.5);
-  context.quadraticCurveTo(centerX + 12.5, centerY + 6, centerX + 7.3, centerY + 6);
+  context.moveTo(centerX - 4.2, glassTopY + 8.8);
+  context.lineTo(centerX - 5.2, glassBottomY - 4.6);
   context.stroke();
 
-  context.fillStyle = "rgba(255, 255, 255, 0.34)";
-  traceRoundedRect(context, mugX + 2.2, mugY + 1.2, 2.8, 10, 1.4);
+  context.fillStyle = "rgba(255, 247, 228, 0.72)";
+  context.beginPath();
+  context.arc(centerX + 3.8, centerY + 1.2, 1.35, 0, Math.PI * 2);
+  context.arc(centerX + 1.1, centerY + 5.8, 1.05, 0, Math.PI * 2);
+  context.arc(centerX + 5.3, centerY + 7.4, 0.8, 0, Math.PI * 2);
   context.fill();
+
+  context.restore();
+
+  traceGlass();
+  context.lineWidth = 2.3;
+  context.strokeStyle = theme.iconPrimary;
+  context.stroke();
+
+  context.strokeStyle = "rgba(141, 82, 18, 0.32)";
+  context.lineWidth = 1.2;
+  context.beginPath();
+  context.moveTo(centerX - 6.2, glassTopY + 5.8);
+  context.quadraticCurveTo(centerX - 1.2, glassTopY + 8.8, centerX + 4.2, glassTopY + 6.4);
+  context.stroke();
 }
 
 function drawPizzaIcon(

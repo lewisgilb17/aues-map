@@ -84,29 +84,19 @@ p {
 }
 
 .map-wrap::before {
-  animation: mysterySweep 18s linear infinite;
-  background:
-    linear-gradient(115deg, transparent 0 18%, rgba(242, 139, 36, 0.12) 18% 20%, transparent 20% 45%, rgba(0, 168, 184, 0.1) 45% 47%, transparent 47% 100%),
-    repeating-linear-gradient(90deg, rgba(255, 209, 102, 0.1) 0 14px, transparent 14px 42px),
-    repeating-linear-gradient(135deg, rgba(109, 75, 183, 0.07) 0 2px, transparent 2px 22px);
+  aspect-ratio: 2448 / 3168;
+  background: url("./src/scooby doo dj.png") no-repeat center / contain;
   content: "";
-  inset: -20%;
-  opacity: 0.5;
+  filter: drop-shadow(0 14px 20px rgba(11, 42, 52, 0.22));
+  opacity: 0.95;
   pointer-events: none;
   position: absolute;
-  transform: rotate(-2deg);
-  z-index: 2;
-}
-
-.map-wrap::after {
-  background:
-    repeating-linear-gradient(30deg, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 18px),
-    linear-gradient(180deg, rgba(255, 252, 238, 0.08), rgba(255, 255, 255, 0));
-  content: "";
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-  z-index: 3;
+  right: -22px;
+  top: -10px;
+  transform: rotate(5deg) translateY(0);
+  transform-origin: top right;
+  width: clamp(144px, 36vw, 267px);
+  z-index: 9;
 }
 
 .map-overlay {
@@ -117,11 +107,53 @@ p {
 }
 
 .map-overlay.top {
+  isolation: isolate;
   top: calc(max(10px, env(safe-area-inset-top)) + var(--header-overlay-offset));
 }
 
+.map-overlay.top::before,
+.map-overlay.top::after {
+  content: "";
+  filter: drop-shadow(0 10px 16px rgba(11, 109, 128, 0.14));
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.map-overlay.top::before {
+  background:
+    radial-gradient(circle at 8% 57%, rgba(240, 124, 168, 0.84) 0 16px, transparent 17px),
+    radial-gradient(circle at 25% 12%, rgba(255, 209, 102, 0.84) 0 18px, transparent 19px),
+    radial-gradient(circle at 39% 82%, rgba(167, 216, 69, 0.82) 0 12px, transparent 13px),
+    radial-gradient(circle at 68% 23%, rgba(0, 168, 184, 0.76) 0 17px, transparent 18px),
+    radial-gradient(circle at 91% 68%, rgba(109, 75, 183, 0.42) 0 9px, transparent 10px),
+    radial-gradient(circle at 47% 48%, rgba(242, 139, 36, 0.76) 0 30px, transparent 31px);
+  height: 118px;
+  left: -34px;
+  opacity: 0.9;
+  top: -28px;
+  transform: rotate(-9deg);
+  width: 206px;
+}
+
+.map-overlay.top::after {
+  background:
+    radial-gradient(circle at 10% 23%, rgba(167, 216, 69, 0.82) 0 15px, transparent 16px),
+    radial-gradient(circle at 27% 87%, rgba(109, 75, 183, 0.48) 0 10px, transparent 11px),
+    radial-gradient(circle at 55% 16%, rgba(242, 139, 36, 0.78) 0 20px, transparent 21px),
+    radial-gradient(circle at 83% 65%, rgba(240, 124, 168, 0.7) 0 16px, transparent 17px),
+    radial-gradient(circle at 95% 31%, rgba(255, 209, 102, 0.76) 0 9px, transparent 10px),
+    radial-gradient(circle at 49% 56%, rgba(0, 168, 184, 0.7) 0 31px, transparent 32px);
+  height: 112px;
+  opacity: 0.88;
+  right: -42px;
+  top: -24px;
+  transform: rotate(8deg);
+  width: 218px;
+}
+
 .map-overlay.bottom {
-  --quick-list-van-space: 126px;
+  --quick-list-van-space: 151px;
   bottom: 226px;
   bottom: calc(var(--sheet-visible-height) + 12px);
   overflow: visible;
@@ -132,11 +164,10 @@ p {
 }
 
 .map-overlay.bottom::before {
-  animation: vanFloat 3.8s ease-in-out infinite;
   background: url("./src/scooby-van.png") no-repeat left bottom / contain;
   content: "";
   filter: drop-shadow(0 13px 21px rgba(15, 78, 92, 0.24));
-  height: 134px;
+  height: 161px;
   left: -8px;
   opacity: 0.96;
   pointer-events: none;
@@ -144,13 +175,12 @@ p {
   bottom: -26px;
   transform: rotate(-5deg);
   transform-origin: bottom left;
-  width: 134px;
+  width: 161px;
   z-index: 0;
 }
 
 .search {
   align-items: center;
-  animation: searchGlow 5.4s ease-in-out infinite;
   background:
     linear-gradient(135deg, rgba(255, 252, 238, 0.94), rgba(238, 250, 230, 0.9)),
     repeating-linear-gradient(90deg, rgba(0, 168, 184, 0.08) 0 12px, rgba(242, 139, 36, 0.08) 12px 24px);
@@ -165,6 +195,7 @@ p {
   padding: 0 16px;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 .search::before {
@@ -217,6 +248,8 @@ p {
   gap: 8px;
   justify-content: space-between;
   margin-top: 9px;
+  position: relative;
+  z-index: 1;
 }
 
 .location-button {
@@ -363,7 +396,6 @@ p {
 }
 
 .venue-chip.active::before {
-  animation: chipBadgeWiggle 1.9s ease-in-out infinite;
   background:
     radial-gradient(circle at 34% 33%, #fff7cf 0 24%, transparent 25%),
     linear-gradient(135deg, var(--orange), var(--flower-pink));
@@ -415,7 +447,6 @@ p {
     radial-gradient(circle at 0 50%, rgba(240, 124, 168, 0.24) 0 12px, transparent 13px);
   content: "";
   height: 72px;
-  animation: flowerSpin 18s linear infinite;
   opacity: 0.58;
   pointer-events: none;
   position: absolute;
@@ -763,61 +794,6 @@ h3::before {
   border-top-color: #fffcef;
 }
 
-@keyframes mysterySweep {
-  0% {
-    background-position: 0 0, 0 0, 0 0;
-  }
-  100% {
-    background-position: 180px 80px, 120px 0, 88px 88px;
-  }
-}
-
-@keyframes searchGlow {
-  0%,
-  100% {
-    box-shadow: var(--mystery-shadow);
-  }
-  50% {
-    box-shadow: 0 22px 56px rgba(242, 139, 36, 0.22), 0 0 0 4px rgba(167, 216, 69, 0.16);
-  }
-}
-
-@keyframes vanFloat {
-  0%,
-  100% {
-    transform: rotate(-5deg) translateY(0);
-  }
-  50% {
-    transform: rotate(-4deg) translateY(-5px);
-  }
-}
-
-@keyframes chipBadgeWiggle {
-  0%,
-  100% {
-    transform: translateY(-50%) rotate(-8deg) scale(1);
-  }
-  50% {
-    transform: translateY(-50%) rotate(10deg) scale(1.08);
-  }
-}
-
-@keyframes flowerSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 @media (min-width: 760px) {
   :root {
     --header-overlay-offset: 16px;
@@ -835,18 +811,24 @@ h3::before {
   }
 
   .map-overlay.bottom {
-    --quick-list-van-space: 120px;
+    --quick-list-van-space: 144px;
     bottom: 24px;
     width: min(62vw, 760px);
   }
 
   .map-overlay.bottom::before {
     bottom: auto;
-    height: 112px;
-    left: -10px;
-    top: -28px;
+    height: 134px;
+    left: -12px;
+    top: -34px;
     transform: rotate(-4deg);
-    width: 112px;
+    width: 134px;
+  }
+
+  .map-wrap::before {
+    right: 24px;
+    top: 18px;
+    width: min(27vw, 330px);
   }
 
   .maplibregl-ctrl-bottom-right {
@@ -867,19 +849,19 @@ h3::before {
   .details-sheet::before {
     background: url("./src/scooby-van.png") no-repeat left top / contain;
     content: "";
-    height: 96px;
+    height: 115px;
     left: 12px;
     opacity: 0.98;
     pointer-events: none;
     position: absolute;
     top: 12px;
-    width: 96px;
+    width: 115px;
     z-index: 0;
   }
 
   .sheet-title-row {
-    min-height: 84px;
-    padding-left: 100px;
+    min-height: 101px;
+    padding-left: 120px;
   }
 
   .sheet-title-row > div {
