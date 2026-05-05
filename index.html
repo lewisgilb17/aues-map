@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>AUES Scooby Brew Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="preconnect" href="https://tiles.openfreemap.org">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="map-wrap" aria-label="Venue map">
+        <div id="map"></div>
+        <div class="map-overlay top">
+          <label class="search">
+            <span>Search venues</span>
+            <input id="venue-search" type="search" autocomplete="off" placeholder="Search venues or deals">
+          </label>
+          <div class="location-panel" aria-live="polite">
+            <button class="location-button" id="locate-button" type="button">
+              <span class="location-button-dot" aria-hidden="true"></span>
+              <span id="locate-button-label">Locate me</span>
+            </button>
+            <p class="location-status" id="location-status">Location off</p>
+          </div>
+        </div>
+        <div class="map-overlay bottom">
+          <div class="quick-list" id="quick-list" aria-label="Venue list"></div>
+        </div>
+      </section>
+
+      <aside class="details-sheet" id="details-sheet" aria-live="polite">
+        <div class="sheet-handle"></div>
+        <div class="sheet-title-row">
+          <div>
+            <p class="eyebrow" id="selected-hours">Venue details</p>
+            <h2 id="selected-name">Loading venues...</h2>
+          </div>
+          <button class="icon-button" id="close-sheet" type="button" aria-label="Minimise details">
+            <span></span>
+          </button>
+        </div>
+
+        <div class="deal-panel">
+          <h3>Deals</h3>
+          <ul id="selected-deals"></ul>
+        </div>
+
+        <a class="directions-link" id="directions-link" href="#" target="_blank" rel="noreferrer">
+          Open directions
+        </a>
+      </aside>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
