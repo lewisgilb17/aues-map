@@ -1171,7 +1171,7 @@ function selectVenue(name: string, moveMap = false): void {
 
   const entry = markers.get(selectedVenue.name);
   if (moveMap && entry) {
-    disableUserFollow("Location shown");
+    disableUserFollow();
     const center = toLngLat(selectedVenue.coords);
     markers.forEach(({ popup }) => popup.remove());
     map.flyTo({
@@ -1305,15 +1305,14 @@ function setLocationStatus(message: string): void {
 
 function updateLocationButton(): void {
   const isWatching = locationWatchId !== null;
-  elements.locateButton.classList.toggle("active", isFollowingUser);
-  elements.locateLabel.textContent = isFollowingUser ? "Following" : isWatching ? "Follow me" : "Locate me";
+  elements.locateButton.classList.toggle("active", isWatching);
+  elements.locateLabel.textContent = "Enable location";
 }
 
-function disableUserFollow(message: string): void {
+function disableUserFollow(): void {
   if (!isFollowingUser) return;
   isFollowingUser = false;
   updateLocationButton();
-  setLocationStatus(message);
 }
 
 function centerMapOnUser(latLng: LatLng): void {
@@ -1356,18 +1355,11 @@ function handleUserPosition(position: GeolocationPosition): void {
   }
 
   const nearest = getNearestVenue(latLng);
-  setLocationStatus(nearest ? `Nearest ${nearest.venue.name} ${formatDistance(nearest.distance)}` : "Location active");
+  setLocationStatus(nearest ? `Nearest venue: ${nearest.venue.name} (${formatDistance(nearest.distance)})` : "Location blocked");
   updateLocationButton();
 }
 
-function describeLocationError(error: GeolocationPositionError): string {
-  if (error.code === error.PERMISSION_DENIED) return "Location blocked";
-  if (error.code === error.POSITION_UNAVAILABLE) return "Location unavailable";
-  if (error.code === error.TIMEOUT) return "Location timed out";
-  return "Location error";
-}
-
-function handleLocationError(error: GeolocationPositionError): void {
+function handleLocationError(): void {
   if (locationWatchId !== null) {
     navigator.geolocation.clearWatch(locationWatchId);
     locationWatchId = null;
@@ -1375,18 +1367,18 @@ function handleLocationError(error: GeolocationPositionError): void {
 
   isFollowingUser = false;
   updateLocationButton();
-  setLocationStatus(describeLocationError(error));
+  setLocationStatus("Location blocked");
 }
 
 function startLocationWatch(): void {
   if (!("geolocation" in navigator)) {
-    setLocationStatus("Location unsupported");
+    setLocationStatus("Location blocked");
     return;
   }
 
   isFollowingUser = true;
   updateLocationButton();
-  setLocationStatus("Finding location");
+  setLocationStatus("Location blocked");
 
   locationWatchId = navigator.geolocation.watchPosition(handleUserPosition, handleLocationError, {
     enableHighAccuracy: true,
@@ -1401,19 +1393,11 @@ function toggleUserLocation(): void {
     return;
   }
 
-  if (isFollowingUser) {
-    disableUserFollow("Location shown");
-    return;
-  }
-
   isFollowingUser = true;
   updateLocationButton();
 
   if (lastUserLatLng) {
     centerMapOnUser(lastUserLatLng);
-    setLocationStatus("Following location");
-  } else {
-    setLocationStatus("Finding location");
   }
 }
 
@@ -1464,13 +1448,13 @@ window.addEventListener("resize", () => {
 
 map.on("dragstart", () => {
   if (!isFollowMapMove) {
-    disableUserFollow("Location shown");
+    disableUserFollow();
   }
 });
 
 map.on("zoomstart", () => {
   if (!isFollowMapMove) {
-    disableUserFollow("Location shown");
+    disableUserFollow();
   }
 });
 
