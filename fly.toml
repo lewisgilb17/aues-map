@@ -1,0 +1,18 @@
+app = "aues-map"
+primary_region = "syd"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+auto_start_machines = true
+auto_stop_machines = true
+force_https = true
+internal_port = 80
+min_machines_running = 1
+processes = ["app"]
+
+[[vm]]
+cpus = 1
+memory = "1gb"
+memory_mb = 1024

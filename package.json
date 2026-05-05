@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "npm run build:pages",
     "build:pages": "tsc && vite build",
-    "build:fly": "VITE_APP_BASE=/ tsc && vite build",
+    "build:fly": "sh -c 'VITE_APP_BASE=/ tsc && VITE_APP_BASE=/ vite build'",
     "preview": "vite preview"
   },
   "dependencies": {
