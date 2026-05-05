@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build:pages",
+    "build:pages": "tsc && vite build",
+    "build:fly": "VITE_APP_BASE=/ tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
