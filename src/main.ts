@@ -33,7 +33,6 @@ type AppElements = {
   search: HTMLInputElement;
   locateButton: HTMLButtonElement;
   locateLabel: HTMLSpanElement;
-  locationStatus: HTMLButtonElement;
   quickList: HTMLDivElement;
   name: HTMLElement;
   hours: HTMLParagraphElement;
@@ -425,7 +424,6 @@ const elements: AppElements = {
   search: getRequiredElement<HTMLInputElement>("#venue-search"),
   locateButton: getRequiredElement<HTMLButtonElement>("#locate-button"),
   locateLabel: getRequiredElement<HTMLSpanElement>("#locate-button-label"),
-  locationStatus: getRequiredElement<HTMLButtonElement>("#location-status"),
   quickList: getRequiredElement<HTMLDivElement>("#quick-list"),
   name: getRequiredElement<HTMLElement>("#selected-name"),
   hours: getRequiredElement<HTMLParagraphElement>("#selected-hours"),
@@ -1300,16 +1298,16 @@ function updateUserAccuracyCircle(latLng: LatLng, radius: number): void {
   });
 }
 
-function setLocationStatus(message: string, venue: Venue | null = null): void {
+function setLocationButtonState(venue: Venue | null): void {
   nearestVenue = venue;
-  elements.locationStatus.textContent = message;
-  elements.locationStatus.disabled = venue === null;
+  updateLocationButton();
 }
 
 function updateLocationButton(): void {
-  const isWatching = locationWatchId !== null;
-  elements.locateButton.classList.toggle("active", isWatching);
-  elements.locateLabel.textContent = "Enable location";
+  const label = nearestVenue ? `Nearest: ${nearestVenue.name}` : "Enable location";
+  elements.locateButton.classList.toggle("active", nearestVenue !== null);
+  elements.locateButton.setAttribute("aria-label", label);
+  elements.locateLabel.textContent = label;
 }
 
 function disableUserFollow(): void {
@@ -1358,8 +1356,7 @@ function handleUserPosition(position: GeolocationPosition): void {
   }
 
   const nearest = getNearestVenue(latLng);
-  setLocationStatus(nearest ? `Nearest: ${nearest.venue.name}` : "Location blocked", nearest?.venue ?? null);
-  updateLocationButton();
+  setLocationButtonState(nearest?.venue ?? null);
 }
 
 function handleLocationError(): void {
@@ -1369,19 +1366,17 @@ function handleLocationError(): void {
   }
 
   isFollowingUser = false;
-  updateLocationButton();
-  setLocationStatus("Location blocked");
+  setLocationButtonState(null);
 }
 
 function startLocationWatch(): void {
   if (!("geolocation" in navigator)) {
-    setLocationStatus("Location blocked");
+    setLocationButtonState(null);
     return;
   }
 
   isFollowingUser = true;
-  updateLocationButton();
-  setLocationStatus("Location blocked");
+  setLocationButtonState(null);
 
   locationWatchId = navigator.geolocation.watchPosition(handleUserPosition, handleLocationError, {
     enableHighAccuracy: true,
@@ -1391,6 +1386,11 @@ function startLocationWatch(): void {
 }
 
 function toggleUserLocation(): void {
+  if (nearestVenue) {
+    selectVenue(nearestVenue.name, true);
+    return;
+  }
+
   if (locationWatchId === null) {
     startLocationWatch();
     return;
@@ -1413,10 +1413,6 @@ elements.search.addEventListener("input", () => {
 });
 
 elements.locateButton.addEventListener("click", toggleUserLocation);
-elements.locationStatus.addEventListener("click", () => {
-  if (!nearestVenue) return;
-  selectVenue(nearestVenue.name, true);
-});
 
 document.addEventListener("touchstart", handleViewportTouchStart, { passive: true });
 document.addEventListener("touchmove", handleViewportTouchMove, { capture: true, passive: false });

@@ -248,7 +248,7 @@ p {
   align-items: center;
   display: flex;
   gap: 8px;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-right: var(--top-overlay-art-space);
   margin-top: 9px;
   position: relative;
@@ -265,14 +265,19 @@ p {
   box-shadow: var(--material-shadow), inset 0 -3px 0 rgba(167, 216, 69, 0.14);
   color: var(--van-blue-dark);
   display: inline-flex;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   font: inherit;
   font-size: 0.78rem;
   font-weight: 950;
   gap: 8px;
+  justify-content: flex-start;
+  max-width: 100%;
   min-height: 42px;
+  min-width: 0;
   padding: 8px 13px;
   position: relative;
+  text-align: left;
+  width: 100%;
 }
 
 .location-button::after {
@@ -315,36 +320,13 @@ p {
   width: 6px;
 }
 
-.location-status {
-  appearance: none;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 246, 218, 0.72));
-  backdrop-filter: blur(20px) saturate(1.14);
-  -webkit-backdrop-filter: blur(20px) saturate(1.14);
-  border: 1px solid var(--glass-border);
-  border-radius: 999px;
-  box-shadow: var(--material-shadow);
-  color: var(--brown);
-  cursor: pointer;
-  display: block;
+#locate-button-label {
   flex: 1 1 auto;
-  font: inherit;
-  font-size: 0.72rem;
-  font-weight: 900;
+  min-width: 0;
   overflow: hidden;
-  padding: 9px 11px;
-  text-align: left;
+  padding-right: 12px;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.location-status:disabled {
-  cursor: default;
-  opacity: 1;
-}
-
-.location-status:focus-visible {
-  outline: 2px solid rgba(8, 115, 132, 0.55);
-  outline-offset: 2px;
 }
 
 .quick-list {
