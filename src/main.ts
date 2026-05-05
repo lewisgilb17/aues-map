@@ -33,7 +33,7 @@ type AppElements = {
   search: HTMLInputElement;
   locateButton: HTMLButtonElement;
   locateLabel: HTMLSpanElement;
-  locationStatus: HTMLParagraphElement;
+  locationStatus: HTMLButtonElement;
   quickList: HTMLDivElement;
   name: HTMLElement;
   hours: HTMLParagraphElement;
@@ -425,7 +425,7 @@ const elements: AppElements = {
   search: getRequiredElement<HTMLInputElement>("#venue-search"),
   locateButton: getRequiredElement<HTMLButtonElement>("#locate-button"),
   locateLabel: getRequiredElement<HTMLSpanElement>("#locate-button-label"),
-  locationStatus: getRequiredElement<HTMLParagraphElement>("#location-status"),
+  locationStatus: getRequiredElement<HTMLButtonElement>("#location-status"),
   quickList: getRequiredElement<HTMLDivElement>("#quick-list"),
   name: getRequiredElement<HTMLElement>("#selected-name"),
   hours: getRequiredElement<HTMLParagraphElement>("#selected-hours"),
@@ -438,6 +438,7 @@ const markers = new Map<string, MarkerEntry>();
 let locationWatchId: number | null = null;
 let userMarker: maplibregl.Marker | null = null;
 let lastUserLatLng: LatLng | null = null;
+let nearestVenue: Venue | null = null;
 let isFollowingUser = false;
 let isFollowMapMove = false;
 let suppressSheetClick = false;
@@ -1299,8 +1300,10 @@ function updateUserAccuracyCircle(latLng: LatLng, radius: number): void {
   });
 }
 
-function setLocationStatus(message: string): void {
+function setLocationStatus(message: string, venue: Venue | null = null): void {
+  nearestVenue = venue;
   elements.locationStatus.textContent = message;
+  elements.locationStatus.disabled = venue === null;
 }
 
 function updateLocationButton(): void {
@@ -1355,7 +1358,7 @@ function handleUserPosition(position: GeolocationPosition): void {
   }
 
   const nearest = getNearestVenue(latLng);
-  setLocationStatus(nearest ? `Nearest venue: ${nearest.venue.name} (${formatDistance(nearest.distance)})` : "Location blocked");
+  setLocationStatus(nearest ? `Nearest: ${nearest.venue.name}` : "Location blocked", nearest?.venue ?? null);
   updateLocationButton();
 }
 
@@ -1410,6 +1413,10 @@ elements.search.addEventListener("input", () => {
 });
 
 elements.locateButton.addEventListener("click", toggleUserLocation);
+elements.locationStatus.addEventListener("click", () => {
+  if (!nearestVenue) return;
+  selectVenue(nearestVenue.name, true);
+});
 
 document.addEventListener("touchstart", handleViewportTouchStart, { passive: true });
 document.addEventListener("touchmove", handleViewportTouchMove, { capture: true, passive: false });
