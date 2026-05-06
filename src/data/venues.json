@@ -1,0 +1,871 @@
+[
+  {
+    "name": "UniBar",
+    "address": "Union House",
+    "capacity": "400 - 1000+",
+    "hours": "4pm - 6pm",
+    "coords": [
+      -34.9186593,
+      138.6035621
+    ],
+    "deals": [
+      "Standard $7 Happy Hour Beers, Cider, Wines & Spirits From 4Pm-6Pm",
+      "Standard $6 Pint And $15 Jug Of Beer Of The Month (Will Be Uraidla Half Moon Session Ale)",
+      "$6 'Sour Puss' Shots; Just Got These In. Wet 'Kitty', Sour Grape, Sour Watermelon Or Sour Apple.",
+      "$6 'Lucky Sip' Cans (Bar Staff Will Give You A Random Can; On Offer Is Assorted Brands Beer, Cider, And RTDs)",
+      "$9 23rd St RTDs (Gin & Tonic, Vodka Pine Lime Soda)",
+      "$10 TQLA Cans"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "The Elephant British Pub",
+    "address": "1 Cinema Place",
+    "capacity": "~200+",
+    "hours": "6pm - close",
+    "coords": [
+      -34.9223,
+      138.6074
+    ],
+    "deals": [
+      "$6 Schooners Of Coopers Pale Ale, Stone & Wood, Great Northern Super Crisp, Hahn Super Dry, Thatchers Apple Cider, Raspberry Seltzer",
+      "$6 Base Spirits",
+      "$6 Fresh Pussy Shots"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "The Austral",
+    "address": "205 Rundle St",
+    "capacity": "110-150 (Function Rm)",
+    "hours": "6pm - close",
+    "coords": [
+      -34.9227415,
+      138.6073696
+    ],
+    "deals": [
+      "$7 Pints",
+      "$15 Jugs Of Coopers Draught And Thatchers Cider.",
+      "$15 Frozen Margaritas",
+      "$5 Shots Of Midori Illusions"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "BRKLYN",
+    "address": "260-262 Rundle St",
+    "capacity": "160 (Full Venue)",
+    "hours": "5pm-9pm",
+    "coords": [
+      -34.9223892,
+      138.609295
+    ],
+    "deals": [
+      "Party Shots $8",
+      "Mystery Beer $10",
+      "Mystery Gin $12"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "El Cheeky Flamingo",
+    "address": "40/33 Vardon Av",
+    "capacity": "80",
+    "hours": "All Night",
+    "coords": [
+      -34.9228958,
+      138.6100576
+    ],
+    "deals": [
+      "Tap Beer $6",
+      "Base Spirits $6",
+      "Cheeky Shots $5"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Fumo Blu",
+    "address": "270 Rundle St",
+    "capacity": "190",
+    "hours": "",
+    "coords": [
+      -34.9224,
+      138.6102
+    ],
+    "deals": [
+      "Drink Specials For Participants:",
+      "$6 Shots: Fresh Pussy, Hubba Bubba, Nutella",
+      "$8 Spirits: Vodka, Gin, Spiced Rum",
+      "$8 Beers: Asahi, Corona, Great Northern Super Crisp",
+      "$14 Cocktails: Fruit Tingle, Long Island Iced Tea,",
+      "Slushies"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "Milky Lane",
+    "address": "272 Rundle St, Adelaide SA 5000",
+    "capacity": "~100+",
+    "hours": "All night",
+    "coords": [
+      -34.9224,
+      138.6104
+    ],
+    "deals": [
+      "Various Food Items",
+      "$7 Crispy Fries",
+      "$7 Sweet Potato Fries",
+      "$12 Bbq Wings",
+      "$12 Franks Red Hot Wings",
+      "$12 Loaded Fries",
+      "$12 Popcorn Chicken",
+      "$12 Milkylane Burger",
+      "$8 Tap Beer",
+      "Hahn Super Dry",
+      "Coopers Pale Ale",
+      "Coors Lager",
+      "$8 House Spirits",
+      "Jim Beam",
+      "Jack Daniels",
+      "Bundaberg Rum",
+      "House Vodka",
+      "House Gin",
+      "House Tequila"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "The Griffins",
+    "address": "38 Hindmarsh Square",
+    "capacity": "180 (Lrg Rm)",
+    "hours": "7pm - close",
+    "coords": [
+      -34.9238184,
+      138.606647
+    ],
+    "deals": [
+      "$10 Spirits From Our Milledges Range",
+      "$8.50 Hahn Super Dry"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "The Havelock",
+    "address": "162 Hutt St",
+    "capacity": "~150+",
+    "hours": "",
+    "coords": [
+      -34.9310344,
+      138.612542
+    ],
+    "deals": [
+      "$8 Vodkas And Coopers Pale And Aussie Lager",
+      "$9 Teq"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Wax Bar",
+    "address": "Lvl 1 Franks Lane (off Rundle St)",
+    "capacity": "~80",
+    "hours": "",
+    "coords": [
+      -34.92255,
+      138.60985
+    ],
+    "deals": [
+      "$9 Tequila"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Archie",
+    "address": "77/91 Rundle Mall",
+    "capacity": "150 - 400",
+    "hours": "9pm-11pm",
+    "coords": [
+      -34.9228351,
+      138.6025993
+    ],
+    "deals": [
+      "$12 Vodka Red Bull",
+      "$12 Bacardi Red Bull",
+      "3 For $30 Red Bulls + Free 30m Arcade Card",
+      "$8 Party Starters - Fireball, Sheep Dog, Mango Shota"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Ballers Clubhouse",
+    "address": "21 Pulteney St",
+    "capacity": "250 - 400",
+    "hours": "4PM - 12:30 AM",
+    "coords": [
+      -34.921893,
+      138.6052933
+    ],
+    "deals": [
+      "$5 Selected Vodka Cocktail",
+      "$500 Dollars Worth Of Drink Cards To Be Won",
+      "Entry For Our $9 Bottomless Offer At A Future Date"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Coopers Alehouse",
+    "address": "316 Pulteney St",
+    "capacity": "~200 (Upstairs)",
+    "hours": "5pm - close",
+    "coords": [
+      -34.9301,
+      138.6064
+    ],
+    "deals": [
+      "Pints Of Pale, Pacific, Lager Or Thatchers For $8.5",
+      "House Wines 150Ml For $7",
+      "House Spirit + Mixer $8.5",
+      "Aperol Spritz $12",
+      "300G Chicken Or Beef Schnitty With Sauce For $14 All Night."
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Electra",
+    "address": "131 King William St",
+    "capacity": "400 (Chamber)",
+    "hours": "until 12am",
+    "coords": [
+      -34.9321801,
+      138.6003105
+    ],
+    "deals": [
+      "Happy Hour Price ($7 Selected Beer, Wine & Base Spirits)"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Holey Moley",
+    "address": "170 Pulteney St",
+    "capacity": "200 - 350",
+    "hours": "",
+    "coords": [
+      -34.9254,
+      138.6066
+    ],
+    "deals": [
+      "Free Golf",
+      "$8 Shots",
+      "$12 Cocktails",
+      "$5 Tacos",
+      "$12 Vodka Red Bulls (3 For $30)",
+      "Etc. (Same As Civil Eng Crawl)"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Hotel Richmond",
+    "address": "128 Rundle Mall, Adelaide SA 5000",
+    "capacity": "100",
+    "hours": "5-10pm",
+    "coords": [
+      -34.9226238,
+      138.6042837
+    ],
+    "deals": [
+      "$10 Guinness",
+      "$10 Lemon Hyoketsu"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Legends Bar",
+    "address": "21 Pulteney St",
+    "capacity": "~100+",
+    "hours": "",
+    "coords": [
+      -34.9219816,
+      138.6053314
+    ],
+    "deals": [
+      "$5 Selected Vodka Cocktail",
+      "$500 Dollars Worth Of Drink Cards To Be Won",
+      "Entry For Our $9 Bottomless Offer At A Future Date"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Cherry",
+    "address": "85 Hindley Street",
+    "capacity": "~250+",
+    "hours": "open - 2am",
+    "coords": [
+      -34.923,
+      138.5984
+    ],
+    "deals": [
+      "$5 Vodkas (Until 12), $5 Fresh Pussy Shots"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "Woolshed",
+    "address": "94/100 Hindley St",
+    "capacity": "500+",
+    "hours": "",
+    "coords": [
+      -34.9230531,
+      138.5959911
+    ],
+    "deals": [
+      "$7 Base + House Beer",
+      "$5 Skittle Bombs"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "Atlantis",
+    "address": "163 Waymouth St",
+    "capacity": "~200",
+    "hours": "7pm - close",
+    "coords": [
+      -34.9262592,
+      138.5933044
+    ],
+    "deals": [
+      "$7 Fresh Pussy Shots",
+      "Free Entry",
+      "$8 Alize",
+      "$15 Cocktail Special (Passionfruit & Guava)"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "Bank Street Social",
+    "address": "48 Hindley St",
+    "capacity": "120 - 200",
+    "hours": "",
+    "coords": [
+      -34.9229959,
+      138.5975794
+    ],
+    "deals": [
+      "Drink Specials:",
+      "$15 Cocktails On Tap",
+      "$8 Mystery Shots",
+      "$10 Selected Wines By The Glass",
+      "Additional Spirits/Beer Will Be On Special For The Night To Be Confirmed",
+      "Venue 2: Bank Street Burger",
+      "$15 Cheeseburger & Fries"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Black Bull",
+    "address": "58 Hindley St",
+    "capacity": "~300+",
+    "hours": "8pm - close",
+    "coords": [
+      -34.923022,
+      138.597224
+    ],
+    "deals": [
+      "$7 Vodka",
+      "$7 Wet Pussy Shots",
+      "$7 Skittle Bombs"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "The Caribbean Bar",
+    "address": "26 Bank St",
+    "capacity": "80",
+    "hours": "",
+    "coords": [
+      -34.9223,
+      138.5965
+    ],
+    "deals": [
+      "$8 House Shots",
+      "$15 Alcoholic Slushy"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "District Nightclub",
+    "address": "84 Hindley Street",
+    "capacity": "400",
+    "hours": "9pm - close",
+    "coords": [
+      -34.923,
+      138.5982
+    ],
+    "deals": [
+      "$5 Vodka Red Bull",
+      "$7 Coronas",
+      "$3 Wet Pussy Shots",
+      "$9 Hard Rated"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "Fabric",
+    "address": "125 Hindley St",
+    "capacity": "~500+",
+    "hours": "",
+    "coords": [
+      -34.9231401,
+      138.5964733
+    ],
+    "deals": [
+      "$7 Base Spirits Until 2Am",
+      "$5 Fresh Pussy Shots Until 2Am",
+      "Free Entry"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "Higher Vision Bar",
+    "address": "132 Hindley St",
+    "capacity": "350",
+    "hours": "6pm-2am",
+    "coords": [
+      -34.9234,
+      138.6004
+    ],
+    "deals": [
+      "Our Ready-To-Drink Beverages Will Be Available At 2 For $15.",
+      "Beer Will Be Available For $9."
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "High Spirits",
+    "address": "20 Gilbert Pl",
+    "capacity": "~100",
+    "hours": "all night",
+    "coords": [
+      -34.9232,
+      138.5999
+    ],
+    "deals": [
+      "$7 Basics",
+      "$14 Mystery Brew Cocktails",
+      "$5 Scooby Snack"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "La Moka",
+    "address": "16 Peel St",
+    "capacity": "60",
+    "hours": "12pm - 1am",
+    "coords": [
+      -34.9235,
+      138.5964
+    ],
+    "deals": [
+      "Custom Cocktail Priced At $20, Select Wine At $12"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "The Little Pub",
+    "address": "17 Hindley St",
+    "capacity": "200",
+    "hours": "9-12pm",
+    "coords": [
+      -34.9226,
+      138.5958
+    ],
+    "deals": [
+      "$7 Base Spirits, $20 Cocktail Jugs, $5 Cocktail Shots, $7 Pints Of Pirate Life"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Mr Kim's",
+    "address": "134 Hindley St",
+    "capacity": "~150",
+    "hours": "",
+    "coords": [
+      -34.92311,
+      138.5945371
+    ],
+    "deals": [],
+    "kind": "food"
+  },
+  {
+    "name": "Secret Chamber",
+    "address": "20 Leigh St",
+    "capacity": "~30",
+    "hours": "all night",
+    "coords": [
+      -34.9237514,
+      138.597585
+    ],
+    "deals": [
+      "House Shots $5",
+      "Astrology Shots $7",
+      "Cocktails $15",
+      "RTDs $8",
+      "Beer $8",
+      "Spirits $8"
+    ],
+    "kind": "club"
+  },
+  {
+    "name": "Strathmore Hotel",
+    "address": "129 North Terrace",
+    "capacity": "200 - 400",
+    "hours": "7pm - 3am",
+    "coords": [
+      -34.921,
+      138.5975
+    ],
+    "deals": [
+      "$30 2L Towers Of Hahn Superdry And Coopers Pale"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Tasty House Korean Soju Bar",
+    "address": "15 Hindley St",
+    "capacity": "",
+    "hours": "6pm - 12am",
+    "coords": [
+      -34.92265,
+      138.59565
+    ],
+    "deals": [
+      "$15 Korean Fried Chicken (All Flavors)"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "The Cumberland Arms",
+    "address": "205 Waymouth St",
+    "capacity": "150 - 300",
+    "hours": "8pm - end of night",
+    "coords": [
+      -34.9262494,
+      138.5902714
+    ],
+    "deals": [
+      "$15 Tap Cocktails",
+      "$8 Vodkas"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "The Sorcerer's Bar",
+    "address": "25B Bank St",
+    "capacity": "45",
+    "hours": "",
+    "coords": [
+      -34.9222,
+      138.5964
+    ],
+    "deals": [
+      "$8 Butterbeer Shots",
+      "$15 Peach Soju Gimlet Cocktail"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Union Hotel",
+    "address": "70 Waymouth St",
+    "capacity": "~150+",
+    "hours": "Food 7 - 9 drinks 7 - midnight",
+    "coords": [
+      -34.9256,
+      138.5976
+    ],
+    "deals": [
+      "Burgers - $20",
+      "Parmi And Pint - $ 30",
+      "Vodka Redbulls - $ 10",
+      "House Spirits - $ 10"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "West Oak",
+    "address": "208 Hindley St",
+    "capacity": "~200+",
+    "hours": "7:00 PM - 8:30PM",
+    "coords": [
+      -34.9232449,
+      138.591664
+    ],
+    "deals": [
+      "$8 Base Spirits",
+      "$10 South Avenue Cans",
+      "$10 Vodka Red Bulls",
+      "$15 Espresso Martinis"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Ed Castle Hotel",
+    "address": "233 Currie St",
+    "capacity": "",
+    "hours": "until 2am",
+    "coords": [
+      -34.925115,
+      138.589426
+    ],
+    "deals": [
+      "$8.50 Pints Of Coopers Pale And Dark Ale",
+      "$8.50 House Wines",
+      "$10 Vodka With Mixer",
+      "$5.50 Mystery Shots"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Jane Faults",
+    "address": "23 Peel St",
+    "capacity": "",
+    "hours": "5pm to 2am",
+    "coords": [
+      -34.9237,
+      138.5967
+    ],
+    "deals": [
+      "$10 House Spirits, $10 Tap Beer, $10 Hard Lemonade/Rasp/Ginger RTD"
+    ],
+    "kind": "pub"
+  },
+  {
+    "name": "Betty's Burgers",
+    "address": "211-215 Rundle St",
+    "capacity": "",
+    "hours": "5-10pm",
+    "coords": [
+      -34.9225,
+      138.6082
+    ],
+    "deals": [
+      "10% Off Food"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Oriental Dumpling King",
+    "address": "Rundle St",
+    "capacity": "",
+    "hours": "",
+    "coords": [
+      -34.9225,
+      138.6067
+    ],
+    "deals": [
+      "Deal 1:",
+      "8 Dumplings (Pork & Cabbage / Pork & Celery / Chicken & Corn)",
+      "Choice Of Cucumber Salad Or Seaweed Salad",
+      "Tsingtao Beer - $20",
+      "Deal 2:",
+      "10 Dumplings (Pork & Cabbage / Pork & Celery / Chicken & Corn)",
+      "Tsingtao Beer - $18",
+      "Deal 3:",
+      "8 Dumplings (Pork & Cabbage / Pork & Celery / Chicken & Corn)",
+      "Choice Of Cucumber Salad Or Seaweed Salad - $15"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "GFC",
+    "address": "Rundle Place SC, Level 1, Shop 104/77-91 Rundle Mall",
+    "capacity": "",
+    "hours": "",
+    "coords": [
+      -34.923473,
+      138.602696
+    ],
+    "deals": [
+      "12% Off (David's Master Pot + Eastea & GFC)",
+      "Condition = Cash-Only."
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Hungry Jack's Rundle",
+    "address": "6/10 Rundle St",
+    "capacity": "",
+    "hours": "24/7",
+    "coords": [
+      -34.9224,
+      138.6041
+    ],
+    "deals": [
+      "2 Whopper Juniors And 2 Small Chips For $10.95",
+      "1 Grilled Chicken And 1 Small Chips For $7.95",
+      "1 Rebel Whopper And 1 Medium Chips For $7.95",
+      "1 Double Cheeseburger And Small Chips For $6.95",
+      "10 Nuggets And Large Chips For $7.95",
+      "Classic Jack's Fried Chicken And Medium Chips For $10.45"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "KFC Hindley",
+    "address": "88 Hindley St",
+    "capacity": "",
+    "hours": "All night",
+    "coords": [
+      -34.9231,
+      138.5985
+    ],
+    "deals": [
+      "10% Off Food All Night"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "LivEat",
+    "address": "150 North Terrace",
+    "capacity": "",
+    "hours": "until 8pm",
+    "coords": [
+      -34.9219723,
+      138.5923056
+    ],
+    "deals": [
+      "15% Off"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Lord of the Fries",
+    "address": "23A Hindley St",
+    "capacity": "",
+    "hours": "All Night",
+    "coords": [
+      -34.9227,
+      138.596
+    ],
+    "deals": [
+      "Buy A Burger, Get A Free Fries Or Small Drink"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "McDonald's Hindley",
+    "address": "44 Hindley St",
+    "capacity": "",
+    "hours": "All Night",
+    "coords": [
+      -34.9229211,
+      138.5979044
+    ],
+    "deals": [
+      "10% Discount"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "David's Master Pot",
+    "address": "Rundle Place SC, Level 1, Shop 104/77-91 Rundle Mall",
+    "capacity": "50",
+    "hours": "11am - 9:30pm",
+    "coords": [
+      -34.923473,
+      138.602696
+    ],
+    "deals": [
+      "12% Off (David's Master Pot + Eastea & GFC)",
+      "Condition = Cash-Only."
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Pancake Kitchen",
+    "address": "13 Gilbert St",
+    "capacity": "",
+    "hours": "5pm - 7am",
+    "coords": [
+      -34.9345612,
+      138.5997466
+    ],
+    "deals": [
+      "30% Off"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "San Churros Rundle Street",
+    "address": "300 Rundle St",
+    "capacity": "",
+    "hours": "10pm to 1 am",
+    "coords": [
+      -34.9222532,
+      138.6106287
+    ],
+    "deals": [
+      "10% Off"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Schnithouse on Rundle",
+    "address": "260 Rundle St",
+    "capacity": "",
+    "hours": "9pm - 11 pm",
+    "coords": [
+      -34.9224,
+      138.6099
+    ],
+    "deals": [
+      "$4 Off Tap Beer (Pints Only)",
+      "$6 House Wines (150Ml)",
+      "$7 Spirits",
+      "10% Off Food + Drink Combo"
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Eastea",
+    "address": "Rundle Place SC, Level 1, Shop 104/77-91 Rundle Mall",
+    "capacity": "",
+    "hours": "",
+    "coords": [
+      -34.923473,
+      138.602696
+    ],
+    "deals": [
+      "12% Off (David's Master Pot + Eastea & GFC)",
+      "Condition = Cash-Only."
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Yiros Feast",
+    "address": "116b Hindley St",
+    "capacity": "",
+    "hours": "5pm - 5am",
+    "coords": [
+      -34.9232,
+      138.5994
+    ],
+    "deals": [
+      "Spend $20, get 5% discount. Spend $30, get a free can of soft drink or water. Give us a Google review to get a free can of soft drink or water."
+    ],
+    "kind": "food"
+  },
+  {
+    "name": "Bambini",
+    "address": "6 Peel St",
+    "capacity": "",
+    "hours": "9pm - 12 am",
+    "coords": [
+      -34.9237,
+      138.5965
+    ],
+    "deals": [
+      "Peroni Red $8",
+      "House Sparkling $10",
+      "Base Spirits $10"
+    ],
+    "kind": "food"
+  }
+]

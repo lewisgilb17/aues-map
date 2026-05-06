@@ -1,6 +1,7 @@
 import maplibregl, { type GeoJSONSource } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "../styles.css";
+import venueData from "./data/venues.json";
 
 type LatLng = [lat: number, lng: number];
 
@@ -13,6 +14,7 @@ type Venue = {
   hours: string;
   coords: LatLng;
   deals: string[];
+  kind: VenueKind;
 };
 
 type MarkerEntry = {
@@ -40,273 +42,7 @@ type AppElements = {
   directions: HTMLAnchorElement;
 };
 
-const venues: Venue[] = [
-  {
-    name: "Atlantis",
-    address: "163 Waymouth St",
-    capacity: "500",
-    hours: "TBC",
-    coords: [-34.9264, 138.5942],
-    deals: ["$7 Fresh Pussy shots", "Free entry", "$8 Alize", "$15 passionfruit/guava cocktail"],
-  },
-  {
-    name: "Ballers Clubhouse",
-    address: "21 Pulteney St",
-    capacity: "350",
-    hours: "4pm-12:30am",
-    coords: [-34.9217, 138.6072],
-    deals: ["$5 selected vodka cocktail", "$500 drink cards to be won", "Future $9 bottomless offer entry"],
-  },
-  {
-    name: "Bambini Cucina",
-    address: "6 Peel St",
-    capacity: "35",
-    hours: "9pm-12am",
-    coords: [-34.9237, 138.5965],
-    deals: ["$8 Peroni Red", "$10 house sparkling", "$10 base spirits"],
-  },
-  {
-    name: "Bank St Social + Bank St Burgers",
-    address: "48 Hindley St",
-    capacity: "200",
-    hours: "TBC",
-    coords: [-34.9228, 138.597],
-    deals: ["$15 tap cocktails", "$8 mystery shots", "$10 selected wines", "$15 cheeseburger + fries"],
-  },
-  {
-    name: "Betty's Burgers",
-    address: "211-215 Rundle St",
-    capacity: "-",
-    hours: "5-10pm",
-    coords: [-34.9225, 138.6082],
-    deals: ["10% off food"],
-  },
-  {
-    name: "Black Bull - Stables",
-    address: "58 Hindley St",
-    capacity: "500",
-    hours: "8pm+",
-    coords: [-34.9229, 138.5975],
-    deals: ["$7 vodka", "$7 Wet Pussy shots", "$7 Skittle Bombs"],
-  },
-  {
-    name: "The Caribbean Bar",
-    address: "26 Bank St",
-    capacity: "80",
-    hours: "TBC",
-    coords: [-34.9223, 138.5965],
-    deals: ["$8 house shots", "$15 alcoholic slushy"],
-  },
-  {
-    name: "The Sorcerer's Bar",
-    address: "25B Bank St",
-    capacity: "45",
-    hours: "TBC",
-    coords: [-34.9222, 138.5964],
-    deals: ["$8 butterbeer shots", "$15 peach soju gimlet cocktail"],
-  },
-  {
-    name: "Cherry",
-    address: "85 Hindley St",
-    capacity: "-",
-    hours: "Ends 2am",
-    coords: [-34.923, 138.5984],
-    deals: ["$5 vodkas until 12am", "$5 Fresh Pussy shots until 2am", "Free entry with crawl tee"],
-  },
-  {
-    name: "Cooper's Alehouse",
-    address: "316 Pulteney St",
-    capacity: "-",
-    hours: "All night",
-    coords: [-34.9301, 138.6064],
-    deals: ["$8.50 pints", "$7 house wine", "$8.50 house spirit + mixer", "$12 Aperol", "$14 schnitty"],
-  },
-  {
-    name: "District Nightclub",
-    address: "84 Hindley St",
-    capacity: "400",
-    hours: "9pm+",
-    coords: [-34.923, 138.5982],
-    deals: ["$5 Vodka Red Bull", "$7 Coronas", "$3 Wet Pussy shots", "$9 Hard Rated"],
-  },
-  {
-    name: "Ed Castle Hotel",
-    address: "233 Currie St",
-    capacity: "-",
-    hours: "Ends 2am",
-    coords: [-34.9259, 138.594],
-    deals: ["$8.50 Coopers pints", "$8.50 house wines", "$10 vodka mixer", "$5.50 mystery shots"],
-  },
-  {
-    name: "Elephant",
-    address: "1 Cinema Place",
-    capacity: "-",
-    hours: "TBC",
-    coords: [-34.9223, 138.6074],
-    deals: ["$6 schooners", "$6 base spirits", "$6 Fresh Pussy shots"],
-  },
-  {
-    name: "Fumo Blu",
-    address: "Basement, 272 Rundle St",
-    capacity: "190",
-    hours: "7pm-3am",
-    coords: [-34.9224, 138.6102],
-    deals: ["$6 shots", "$8 spirits", "$8 beers", "$14 cocktails/slushies"],
-  },
-  {
-    name: "High Spirits",
-    address: "20 Gilbert Pl",
-    capacity: "-",
-    hours: "All night",
-    coords: [-34.9232, 138.5999],
-    deals: ["$7 basics", "$14 Mystery Brew cocktails", "$5 Scooby Snack shots"],
-  },
-  {
-    name: "Higher Vision Bar",
-    address: "132 Hindley St",
-    capacity: "200, pending 350",
-    hours: "6pm-2am",
-    coords: [-34.9234, 138.6004],
-    deals: ["2 RTDs for $15", "$9 beer", "Bottle giveaway"],
-  },
-  {
-    name: "Holey Moley",
-    address: "Level 1, 162-170 Pulteney St",
-    capacity: "465",
-    hours: "5pm-2am",
-    coords: [-34.9254, 138.6066],
-    deals: [
-      "$8 shots",
-      "$5 WAP shots",
-      "$5 tacos",
-      "$8 darts",
-      "$12 Jagerbombs",
-      "2 for $30 margaritas",
-      "2 for $25 Stone & Wood pints",
-      "Free golf",
-    ],
-  },
-  {
-    name: "Hungry Jack's Rundle",
-    address: "Shop 6-10 Rundle St Carpark",
-    capacity: "Full capacity",
-    hours: "24/7",
-    coords: [-34.9224, 138.6041],
-    deals: ["Burger, chips, nuggets, and chicken meal deals from $6.95-$10.95"],
-  },
-  {
-    name: "Jane Faults",
-    address: "23 Peel St",
-    capacity: "120",
-    hours: "5pm-2am",
-    coords: [-34.9237, 138.5967],
-    deals: ["$10 house spirits", "$10 tap beer", "$10 selected RTDs"],
-  },
-  {
-    name: "KFC Hindley",
-    address: "88 Hindley St",
-    capacity: "-",
-    hours: "Ends 3am",
-    coords: [-34.9231, 138.5985],
-    deals: ["10% off"],
-  },
-  {
-    name: "La Moka",
-    address: "16a Peel St",
-    capacity: "60",
-    hours: "12pm-1am",
-    coords: [-34.9235, 138.5964],
-    deals: ["$20 custom cocktail", "$12 selected wine"],
-  },
-  {
-    name: "LivEat",
-    address: "6 York St",
-    capacity: "-",
-    hours: "Ends 8pm",
-    coords: [-34.922, 138.6062],
-    deals: ["15% off"],
-  },
-  {
-    name: "Lord of the Fries",
-    address: "23a Hindley St",
-    capacity: "25-30 dine-in, takeaway noted",
-    hours: "All night",
-    coords: [-34.9227, 138.596],
-    deals: ["Buy any burger, get any can of drink/water free"],
-  },
-  {
-    name: "Milky Lane Adelaide",
-    address: "272 Rundle St",
-    capacity: "200",
-    hours: "12am-12pm",
-    coords: [-34.9224, 138.6104],
-    deals: ["$7 fries", "$12 wings/loaded fries/popcorn chicken/burger", "$8 tap beer", "$8 house spirits", "$13 cocktails"],
-  },
-  {
-    name: "Oriental Dumpling King",
-    address: "165 Rundle St",
-    capacity: "-",
-    hours: "Ends 10pm",
-    coords: [-34.9225, 138.6067],
-    deals: ["Dumpling + salad + Tsingtao deals: $15, $18, $20"],
-  },
-  {
-    name: "Secret Chamber",
-    address: "Shop 1, 20 Leigh St",
-    capacity: "50",
-    hours: "Anytime",
-    coords: [-34.9238, 138.596],
-    deals: ["$5 house shots", "$7 astrology shots", "$15 cocktails", "$8 RTDs/beer/spirits"],
-  },
-  {
-    name: "Schnithouse on Rundle",
-    address: "260 Rundle St",
-    capacity: "160",
-    hours: "9-11pm",
-    coords: [-34.9224, 138.6099],
-    deals: ["$4 off tap beer pints", "$6 house wine", "$7 house spirits", "10% off main meal + drinks bought together"],
-  },
-  {
-    name: "Strathmore Hotel",
-    address: "129 North Terrace",
-    capacity: "-",
-    hours: "7pm-3am",
-    coords: [-34.921, 138.5975],
-    deals: ["$30 2L towers of Hahn SuperDry and Coopers Pale"],
-  },
-  {
-    name: "The Little Pub",
-    address: "17 Hindley St",
-    capacity: "200",
-    hours: "9pm-12am",
-    coords: [-34.9226, 138.5958],
-    deals: ["$7 base spirits", "$20 cocktail jugs", "$5 cocktail shots", "$7 Pirate Life pints"],
-  },
-  {
-    name: "Union Hotel",
-    address: "70 Waymouth St",
-    capacity: "500-600",
-    hours: "7pm-12am",
-    coords: [-34.9256, 138.5976],
-    deals: ["$20 burgers", "$30 parmi + pint", "$10 Vodka Red Bull", "$10 house spirits"],
-  },
-  {
-    name: "West Oak",
-    address: "208 Hindley St",
-    capacity: "-",
-    hours: "7-8pm",
-    coords: [-34.9236, 138.6027],
-    deals: ["$8 base spirits", "$10 South Avenue cans", "$10 Vodka Red Bulls", "$15 espresso martinis"],
-  },
-  {
-    name: "Yiros Feast",
-    address: "116b Hindley St",
-    capacity: "-",
-    hours: "5pm-5am",
-    coords: [-34.9232, 138.5994],
-    deals: ["Spend $20 get 5% off", "Spend $30 get free can/water", "Google review gets free can/water"],
-  },
-];
+const venues = venueData as Venue[];
 
 const MAP_STYLE_URL = "https://tiles.openfreemap.org/styles/bright";
 const DEFAULT_CENTER: [number, number] = [138.6015, -34.924];
@@ -351,27 +87,6 @@ const VENUE_KIND_THEME: Record<
     iconTertiary: "#ffffff",
   },
 };
-const FOOD_VENUE_NAMES = new Set<string>([
-  "Bambini Cucina",
-  "Bank St Social + Bank St Burgers",
-  "Betty's Burgers",
-  "Hungry Jack's Rundle",
-  "KFC Hindley",
-  "LivEat",
-  "Lord of the Fries",
-  "Milky Lane Adelaide",
-  "Oriental Dumpling King",
-  "Schnithouse on Rundle",
-  "Yiros Feast",
-]);
-const CLUB_VENUE_NAMES = new Set<string>([
-  "Atlantis",
-  "Ballers Clubhouse",
-  "Cherry",
-  "District Nightclub",
-  "Fumo Blu",
-  "Secret Chamber",
-]);
 const MOBILE_SHEET_BREAKPOINT = 760;
 const SHEET_COLLAPSED_PEEK = 72;
 const SHEET_SNAP_RATIO = 0.45;
@@ -673,15 +388,7 @@ function fitVenueBounds(list: Venue[], animate = true): void {
 }
 
 function getVenueKind(venue: Venue): VenueKind {
-  if (FOOD_VENUE_NAMES.has(venue.name)) {
-    return "food";
-  }
-
-  if (CLUB_VENUE_NAMES.has(venue.name)) {
-    return "club";
-  }
-
-  return "pub";
+  return venue.kind;
 }
 
 function traceRoundedRect(
@@ -1122,7 +829,7 @@ venues.forEach((venue, index) => {
   const popup = new maplibregl.Popup({
     closeButton: false,
     offset: 30,
-  }).setHTML(`<strong>${venue.name}</strong><br>${venue.hours}`);
+  }).setHTML(`<strong>${venue.name}</strong>${venue.hours ? `<br>${venue.hours}` : ""}`);
   markers.set(venue.name, { popup });
 });
 
@@ -1142,6 +849,7 @@ function renderQuickList(list: Venue[] = venues): void {
 function renderDetails(venue: Venue): void {
   elements.name.textContent = venue.name;
   elements.hours.textContent = venue.hours;
+  elements.hours.hidden = venue.hours.length === 0;
   elements.deals.innerHTML = "";
 
   venue.deals.forEach((deal) => {

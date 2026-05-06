@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "sync:venues": "node scripts/sync-venue-summary.mjs",
     "build": "npm run build:pages",
     "build:pages": "tsc && vite build",
     "build:fly": "sh -c 'VITE_APP_BASE=/ tsc && VITE_APP_BASE=/ vite build'",
