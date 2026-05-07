@@ -51,11 +51,11 @@ This summary reflects the venues highlighted green in the workbook. Deals, hours
 | GFC | Rundle Place SC, Level 1, Shop 104/77-91 Rundle Mall |  | 12% Off (David's Master Pot + Eastea & GFC); Condition = Cash-Only. |  |
 | Hungry Jack's Rundle | 6/10 Rundle St |  | 2 Whopper Juniors And 2 Small Chips For $10.95; 1 Grilled Chicken And 1 Small Chips For $7.95; 1 Rebel Whopper And 1 Medium Chips For $7.95; 1 Double Cheeseburger And Small Chips For $6.95; 10 Nuggets And Large Chips For $7.95; Classic Jack's Fried Chicken And Medium Chips For $10.45 | 24/7 |
 | KFC Hindley | 88 Hindley St |  | 10% Off Food All Night | All night |
-| LivEat | 150 North Terrace |  | 15% Off | until 8pm |
+| LivEat | 6 York St |  | 15% Off | until 8pm |
 | Lord of the Fries | 23A Hindley St |  | Buy A Burger, Get A Free Fries Or Small Drink | All Night |
 | McDonald's Hindley | 44 Hindley St |  | 10% Discount | All Night |
 | David's Master Pot | Rundle Place SC, Level 1, Shop 104/77-91 Rundle Mall | 50 | 12% Off (David's Master Pot + Eastea & GFC); Condition = Cash-Only. | 11am - 9:30pm |
-| Pancake Kitchen | 13 Gilbert St |  | 30% Off | 5pm - 7am |
+| Pancake Kitchen | 13 Gilbert Pl |  | 30% Off | 5pm - 7am |
 | San Churros Rundle Street | 300 Rundle St |  | 10% Off | 10pm to 1 am |
 | Schnithouse on Rundle | 260 Rundle St |  | $4 Off Tap Beer (Pints Only); $6 House Wines (150Ml); $7 Spirits; 10% Off Food + Drink Combo | 9pm - 11 pm |
 | Eastea | Rundle Place SC, Level 1, Shop 104/77-91 Rundle Mall |  | 12% Off (David's Master Pot + Eastea & GFC); Condition = Cash-Only. |  |
