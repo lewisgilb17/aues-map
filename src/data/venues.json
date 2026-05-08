@@ -867,5 +867,19 @@
       "Base Spirits $10"
     ],
     "kind": "food"
+  },
+  {
+    "name": "Level Up",
+    "address": "111 Hindley St",
+    "capacity": "",
+    "hours": "All Night",
+    "coords": [
+      -34.923318108363404,
+      138.59518542658577
+    ],
+    "deals": [
+      "20% Off Spirits & Beers"
+    ],
+    "kind": "pub"
   }
 ]
